@@ -10,7 +10,24 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
+  getCookie(name:any) {
+    const value = `; ${document.cookie}`;
+    const parts:any = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  }
   constructor(private _api:AuthCheckService, private _router:Router){}
+
+  ngOnInit(){ //nevigate to their page if they had alrady sign in
+    if(this.getCookie('_id')){
+      if(this.getCookie('_isAdmin') == 'true'){
+        this._router.navigate(['/admin']);
+      }
+      else{
+        this._router.navigate(['/employee']);
+      }
+    }
+  }
+
   form = new FormGroup({
     UserName: new FormControl('', Validators.required),
     Password: new FormControl('', Validators.required),
@@ -29,14 +46,19 @@ export class LoginComponent {
           now.setTime(expireTime);
           document.cookie = '_id = '+res.id+'; expires='+now.toUTCString()+';path=/';
           document.cookie = '_isAdmin = '+res.isAdmin+'; expires='+now.toUTCString()+';path=/';
-          console.log(res.id);
+          console.log('_id = '+res.id+'; expires='+now.toUTCString()+';path=/');
         }
 
         else{ //if remember me not checked in login form
-          document.cookie = '_id = '+res._id;
-          document.cookie = '_isAdmin = '+res.isadmin;
+          document.cookie = '_id = '+res.id;
+          document.cookie = '_isAdmin = '+res.isAdmin;
         }
-        this._router.navigate(['/admin'])
+        if(res.isAdmin){ // redirect them accrding to their login
+          this._router.navigate(['/admin'])
+        }
+        else{
+          this._router.navigate(['/employee']);
+        }
       }
       else{ // if not login in res
         Swal.fire({

@@ -3,7 +3,7 @@ const {mongoose } = require("mongoose");
 const scema = mongoose.Schema({
     username:String,
     password:String,
-    isadmin:String,
+    isadmin:Boolean,
     _id:mongoose.Types.ObjectId
 })
 
