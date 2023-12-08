@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+    --bg: white;
+    --bg-light: lightgrey;
+    --shadow:grey;
+    --shadow-light:lightgrey;
+    --font:black;
+    --font-light:rgb(52, 50, 50);
+    --btn:green;
+    --btn-light:darkgreen;
+    --purple:#827ffe;
+    --purple-dark:#403866;
+}
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+}
