@@ -1,20 +1,22 @@
 <div class="container-login">
     <div class="wrap-login border p-3 shadow">
-        <form class="login-form ">
+        <form class="login-form" [formGroup]="form" (ngSubmit)="checkLogin()">
             <span class="login-form-title mb-5">
                 Login
             </span>
+            <!-- <span>* UserName is required</span> -->
             <div class="wrap-input mb-3">
-                <input class="input" type="text" placeholder="Username">
+                <input class="input" type="text" placeholder="Username" formControlName="UserName" required>
                 <span class="focus-input"></span>
             </div>
+            <!-- <span>* Password is required</span> -->
             <div class="wrap-input mb-3">
-                <input class="input" type="password" placeholder="Password">
+                <input class="input" type="password" placeholder="Password" formControlName="Password" required>
                 <span class="focus-input"></span>
             </div>
             <div class="mb-5">
                 <div class="float-start">
-                    <input class="input-checkbox" id="ckb1" type="checkbox">
+                    <input class="input-checkbox" id="ckb1" type="checkbox" formControlName="RMe">
                     <label class="label-checkbox" for="ckb1">
                         Remember me
                     </label>
@@ -25,7 +27,7 @@
                     </a>
                 </div>
             </div>
-            <button class="login-form-btn my-5 fs-5">
+            <button class="login-form-btn my-5 fs-5" [disabled]="!form.valid">
                 Login
             </button>
         </form>

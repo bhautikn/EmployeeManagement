@@ -38,6 +38,7 @@ button {
     padding: 15px;
     background-position: center;
     background-size: cover;
+    /* position: absolute; */
     background-repeat: no-repeat;
 }
 

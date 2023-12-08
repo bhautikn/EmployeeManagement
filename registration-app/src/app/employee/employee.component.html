@@ -1,0 +1,33 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>sr</th>
+            <th>first name</th>
+            <th>middle name</th>
+            <th>last name</th>
+            <th>department name</th>
+            <th>opration</th>
+        </tr>
+    </thead>
+
+    <tbody *ngIf="searchText==''">
+        <tr *ngFor="let emp of employees; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{ emp.firstName }}</td>
+            <td>{{ emp.middleName }}</td>
+            <td>{{ emp.lastName }}</td>
+            <td>{{ emp.deptartment }}</td>
+            <td><button (click)="moreInfo(emp.id)" class="btn btn-info">info</button></td>
+        </tr>
+    </tbody>      
+
+    <tbody *ngIf="searchText!=''">
+        <tr *ngFor="let emp of filteredemp; let i=index">
+            <td>{{ emp.firstName }}</td>
+            <td>{{ emp.middleName }}</td>
+            <td>{{ emp.lastName }}</td>
+            <td>{{ emp.deptartment }}</td>
+            <td><button (click)="moreInfo(emp.id)" class="btn btn-info">info</button></td>
+        </tr>
+    </tbody>
+</table>
