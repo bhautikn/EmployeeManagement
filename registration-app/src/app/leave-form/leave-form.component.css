@@ -1,0 +1,15 @@
+/* Your existing CSS styles here */
+
+.result {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  .paid-leave {
+    color: #27ae60;
+  }
+  
+  .unpaid-leave {
+    color: #e74c3c;
+  }
+  

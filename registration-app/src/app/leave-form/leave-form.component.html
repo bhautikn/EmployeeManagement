@@ -1,0 +1,33 @@
+<div class="container">
+    <h1>Employee Leave Form</h1>
+    <form [formGroup]="leaveForm" (ngSubmit)="calculateLeave()">
+      <div class="form-group">
+        <label for="reason">Reason for Leave:</label>
+        <textarea formControlName="reason" rows="4"></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label for="days">Number of Days:</label>
+        <input type="number" formControlName="days" min="1">
+      </div>
+  
+      <div class="form-group">
+        <label for="startDate">Start Date:</label>
+        <input type="date" formControlName="startDate">
+      </div>
+  
+      <div class="form-group">
+        <label for="endDate">End Date:</label>
+        <input type="date" formControlName="endDate">
+      </div>
+  
+      <div class="form-group">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  
+    <div class="result" [ngClass]="result === 'Paid Leave' ? 'paid-leave' : 'unpaid-leave'">
+      {{ result }}
+    </div>
+  </div>
+  
