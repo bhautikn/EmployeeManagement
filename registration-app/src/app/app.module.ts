@@ -29,7 +29,7 @@ import { AttendenceComponent } from './attendence/attendence.component';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
