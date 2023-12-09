@@ -11,4 +11,12 @@ export class LeaveFormComponent {
   leaveApplication: any = {}; // Initialize with empty object
 
   // You can add additional logic here if needed
+  submitForm() {
+    // Handle form submission logic
+    console.log();
+  }
+  cancelleave() {
+    // Handle form submission logic
+    console.log();
+  }  
 }

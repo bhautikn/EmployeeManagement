@@ -15,7 +15,7 @@ submitForm() {
   // Handle form submission logic
   console.log(this.employee);
 }
-cancleForm() {
+cancelForm() {
   // Handle form submission logic
   console.log(this.employee);
 }

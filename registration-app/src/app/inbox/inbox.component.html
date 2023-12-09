@@ -1,0 +1,51 @@
+<!-- inbox.component.html -->
+
+<div class="inbox-container">
+    <h2 style="text-align: center;">Inbox</h2>
+  
+    <!-- Two big buttons on top -->
+    <div class="button-container">
+      <button class="big-button" (click)="onReadClick()">Read</button>
+      <button class="big-button" (click)="onUnreadClick()">Unread</button>
+    </div>
+  
+    <!-- Table displaying content based on the selected button -->
+    <table *ngIf="showReadTable" class="inbox-table">
+      <!-- Table headers -->
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Date</th>
+          <!-- Add more columns as needed -->
+        </tr>
+      </thead>
+      <!-- Table content for 'Read' button -->
+      <tbody>
+        <tr *ngFor="let message of readMessages">
+          <td>{{ message.subject }}</td>
+          <td>{{ message.date }}</td>
+          <!-- Add more columns as needed -->
+        </tr>
+      </tbody>
+    </table>
+  
+    <table *ngIf="showUnreadTable" class="inbox-table">
+      <!-- Table headers -->
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Date</th>
+          <!-- Add more columns as needed -->
+        </tr>
+      </thead>
+      <!-- Table content for 'Unread' button -->
+      <tbody>
+        <tr *ngFor="let message of unreadMessages">
+          <td>{{ message.subject }}</td>
+          <td>{{ message.date }}</td>
+          <!-- Add more columns as needed -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

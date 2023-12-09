@@ -1,7 +1,7 @@
 <!-- leave-form.component.html -->
 <h1>Leave Form</h1>
 <form>
-<div class="row">
+<!-- <div class="row">
   <div class="col">
     <label for="firstName">First Name:</label>
     <input type="text" id="firstName" name="firstName" [(ngModel)]="leaveApplication.firstName" required>
@@ -16,9 +16,9 @@
     <label for="designation">Designation:</label>
     <input type="text" id="designation" name="designation" [(ngModel)]="leaveApplication.designation" required>
   </div>
-</div>
+</div> -->
 
-<hr width="100%" size="7" color="black"  noshade> 
+<!-- <hr width="100%" size="7" color="black"  noshade>  -->
 
 <div>
   <label for="reasonForLeave">Reason for Leave:</label>
@@ -34,11 +34,14 @@
     <option value="Sabbatical leave">Sabbatical leave</option>
     <option value="Marriage leave">Marriage leave</option>
     <option value="Voluntary leave">Voluntary leave</option>    
+    <option value="Bereavement leave">Bereavement leave</option>
+    <option value="Compensatory leave">Compensatory leave</option>
+    <option value="Mandatory leave">Mandatory leave</option>        
     <!-- Add more leave types as needed -->
   </select>
 </div>
 
-<hr width="100%" size="7" color="black"  noshade> 
+<hr width="100%" size="7" color="blue"  noshade> 
 
 <div class="row">
 
@@ -57,4 +60,10 @@
   <input type="date" id="endDate" name="endDate" [(ngModel)]="leaveApplication.endDate" required>
 </div>
 </div>
+
+<div>
+  <button type="button" (click)="submitForm()">Submit</button>
+&nbsp;
+  <button type="button" class="btn" (click)="cancelleave()">Cancle</button>
+</div>  
 </form>
