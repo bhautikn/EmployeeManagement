@@ -6,7 +6,6 @@ import { AdminComponent } from './admin/admin.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { LeaveFormComponent } from './leave-form/leave-form.component';
 import { AttendenceComponent } from './attendence/attendence.component';
-import { EmpInfoComponent } from './emp-info/emp-info.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 
 const routes: Routes = [
