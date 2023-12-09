@@ -11,7 +11,7 @@ const uri = 'mongodb+srv://bhautik:bhautik@cluster0.eutrnxk.mongodb.net/Employee
 mongoose.connect(uri).then(()=>{
     console.log('database connected');
 })
-// start middleware
+///////////////////////////// start middleware///////////////////////////////////////////////
 app.use(cors())
 app.use(bodyparser.urlencoded({ extended: true }))
 app.use(bodyparser.json());
@@ -27,32 +27,37 @@ app.use('/admin', (req,res, next)=>{
     }
 })
 
-// end middleware
+///////////////////////////////// end middleware ///////////////////////
 
-////////////// attandance module //////////////
+/////////////////////// attandance module //////////////////////////
 app.get('/admin/attandance',async (req,res)=>{
-    let data = await Employee.find({}, {firstname:1, middlename:1, lastname:1, _id:0, username:1})
+    let data = await Employee.find({}, {firstname:1, middlename:1, lastname:1, username:1})
     res.json(data);
 })
 app.post('/admin/attandance', async (req, res)=>{
+    req.body.forEach(element => {
+        const attandace = new Attandace({
+            _id: new mongoose.Types.ObjectId(),
+            userId:new mongoose.Types.ObjectId(element._id),
+            present:element.present,
+            firstname:element.firstname,
+            username:element.username,
+            date:element.date
+        })
+        attandace.save();
+    });
     const data = await Attandace.insertMany(req.body);
     res.json({status:'ok'})
 })
 
-//////////////////////////////////////////////////////////
-// const data = new User({
-//     username:'bhautik',
-//     password:'bhautik',
-//     _id: new mongoose.Types.ObjectId()
-// })
-// data.save().then(data=>{
-//     console.log('data saved', data)
-// })
+////////////////////////// Employee get and set ////////////////////////////////
 
+// app.get('/employee/sort')
+
+///////////////////////////////////////// login api ///////////////////////////////////// 
 app.post('/UserLogin', async (req, res)=>{
     const username = req.body.UserName;
     const password = req.body.Password;
-    const rme = req.body.RMe;
     const data = await User.findOne({$and:[{username:username}, {password:password}]})
     if(data){
         res.json({login:true, isAdmin:data.isadmin, id:data._id});

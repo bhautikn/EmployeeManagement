@@ -1,33 +1,69 @@
-<div class="container">
-    <h1>Employee Leave Form</h1>
-    <form [formGroup]="leaveForm" (ngSubmit)="calculateLeave()">
-      <div class="form-group">
-        <label for="reason">Reason for Leave:</label>
-        <textarea formControlName="reason" rows="4"></textarea>
-      </div>
-  
-      <div class="form-group">
-        <label for="days">Number of Days:</label>
-        <input type="number" formControlName="days" min="1">
-      </div>
-  
-      <div class="form-group">
-        <label for="startDate">Start Date:</label>
-        <input type="date" formControlName="startDate">
-      </div>
-  
-      <div class="form-group">
-        <label for="endDate">End Date:</label>
-        <input type="date" formControlName="endDate">
-      </div>
-  
-      <div class="form-group">
-        <button type="submit">Submit</button>
-      </div>
-    </form>
-  
-    <div class="result" [ngClass]="result === 'Paid Leave' ? 'paid-leave' : 'unpaid-leave'">
-      {{ result }}
-    </div>
+<!-- leave-form.component.html -->
+<h1>Leave Form</h1>
+<form>
+<!-- <div class="row">
+  <div class="col">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" [(ngModel)]="leaveApplication.firstName" required>
   </div>
-  
+
+  <div class="col">
+    <label for="department">Department:</label>
+    <input type="text" id="department" name="department" [(ngModel)]="leaveApplication.department" required>
+  </div>
+
+  <div class="col">
+    <label for="designation">Designation:</label>
+    <input type="text" id="designation" name="designation" [(ngModel)]="leaveApplication.designation" required>
+  </div>
+</div> -->
+
+<!-- <hr width="100%" size="7" color="black"  noshade>  -->
+
+<div>
+  <label for="reasonForLeave">Reason for Leave:</label>
+  <textarea id="reasonForLeave" name="reasonForLeave" [(ngModel)]="leaveApplication.reasonForLeave" required></textarea>
+</div>
+
+<div>
+  <label for="typeOfLeave">Type of Leave:</label>
+  <select id="typeOfLeave" name="typeOfLeave" [(ngModel)]="leaveApplication.typeOfLeave" required>
+    <option value="Annual Leave">Annual Leave</option>
+    <option value="Sick Leave">Sick Leave</option>
+    <option value="Maternity Leave">Maternity Leave</option>
+    <option value="Sabbatical leave">Sabbatical leave</option>
+    <option value="Marriage leave">Marriage leave</option>
+    <option value="Voluntary leave">Voluntary leave</option>    
+    <option value="Bereavement leave">Bereavement leave</option>
+    <option value="Compensatory leave">Compensatory leave</option>
+    <option value="Mandatory leave">Mandatory leave</option>        
+    <!-- Add more leave types as needed -->
+  </select>
+</div>
+
+<hr width="100%" size="7" color="blue"  noshade> 
+
+<div class="row">
+
+<div class="col">
+  <label for="numberOfDays">Number of Days:</label>
+  <input type="number" id="numberOfDays" name="numberOfDays" [(ngModel)]="leaveApplication.numberOfDays" required>
+</div>
+
+<div class="col">
+  <label for="startDate">Start Date:</label>
+  <input type="date" id="startDate" name="startDate" [(ngModel)]="leaveApplication.startDate" required>
+</div>
+
+<div class="col">
+  <label for="endDate">End Date:</label>
+  <input type="date" id="endDate" name="endDate" [(ngModel)]="leaveApplication.endDate" required>
+</div>
+</div>
+
+<div>
+  <button type="button" (click)="submitForm()">Submit</button>
+&nbsp;
+  <button type="button" class="btn" (click)="cancelleave()">Cancle</button>
+</div>  
+</form>

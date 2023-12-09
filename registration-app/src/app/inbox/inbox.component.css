@@ -1,0 +1,48 @@
+/* inbox.component.css */
+
+.inbox-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    color: #3498db;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .big-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .big-button:hover {
+    background-color: #2980b9;
+  }
+  
+  .inbox-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .inbox-table th, .inbox-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .inbox-table th {
+    background-color: #3498db;
+    color: #fff;
+  }
+  
