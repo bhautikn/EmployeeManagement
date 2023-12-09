@@ -4,7 +4,7 @@ const scema = mongoose.Schema({
     _id:mongoose.Types.ObjectId,
     username:String,
     date:Date,
-    isPresent:Boolean
+    present:Boolean
 })
 
 module.exports = mongoose.model('attandace', scema);

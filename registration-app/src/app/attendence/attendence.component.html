@@ -20,19 +20,18 @@
       <tbody *ngIf="searchText==''">
         <tr *ngFor="let emp of employees;let i = index">
           <td>{{i+1}}</td>
-          <td>{{emp.firstName}}</td>
-          <td>{{emp.middleName}}</td>
-          <td>{{emp.lastName}}</td>
+          <td>{{emp.firstname}}</td>
+          <td>{{emp.middlename}}</td>
+          <td>{{emp.lastname}}</td>
           <td><input type="checkbox" [(ngModel)]="emp.present" class="float-right w-25"></td>
         </tr>
       </tbody>
       <tbody *ngIf="searchText!=''">
         <tr *ngFor="let emp of filteredemp; let i=index">
           <td>{{i+1}}</td>
-          <td>{{ emp.firstName }}</td>
-          <td>{{ emp.middleName }}</td>
-          <td>{{ emp.lastName }}</td>
-          <td>{{ emp.deptartment }}</td>
+          <td>{{ emp.firstname }}</td>
+          <td>{{ emp.middlename }}</td>
+          <td>{{ emp.lastname }}</td>
           <td><input type="checkbox" [(ngModel)]="emp.present" class="float-right w-25"></td>
         </tr>
       </tbody>

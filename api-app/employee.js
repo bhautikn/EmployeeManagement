@@ -4,6 +4,7 @@ const scema = mongoose.Schema({
     _id:mongoose.Types.ObjectId,
     leave:Number,
     username:String,
+    password:String,
     firstname:String,
     middlename:String,
     lastname:String,
@@ -22,8 +23,9 @@ const scema = mongoose.Schema({
     pr10:Number,
     pr12:Number,
     degree:String,
-    citizenship:String,
+    contry:String,
     weight:Number,
+    height:Number,
     dept:String,
 })
 
