@@ -1,18 +1,39 @@
-<div>
+<div class="container">
     <h2>Employee Attendance Sheet</h2>
-  
-    <form>
-      <div *ngFor="let employee of employees">
-        <label>
-          <input type="checkbox" [(ngModel)]="employee.present">
-          {{ employee.name }}
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>sr.</th>
+          <th>first Name</th>
+          <th>middle Name</th>
+          <th>last Name</th>
+          <th>Present</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of employees;let i = index">
+          <td>{{i+1}}</td>
+          <td>{{emp.firstname}}</td>
+          <td>{{emp.middlename}}</td>
+          <td>{{emp.lastname}}</td>
+          <td><input type="checkbox" [(ngModel)]="emp.present" class="float-right w-25"></td>
+        </tr>
+        <br>
+      <button type="button" (click)="submitAttendance()">Submit Attendance</button>
+
+      </tbody>
+    </table>
+    <!-- <form>
+      <div *ngFor="let emp of employees" class="border-emp-name">
+        <label class="float-left">
+          {{ emp.name }}
         </label>
+        <input type="checkbox" [(ngModel)]="emp.present" class="float-right w-25">
       </div>
   
       <label for="date">Date:</label>
       <input type="date" id="date" name="date" [(ngModel)]="attendanceDate" required>
   
-      <button type="button" (click)="submitAttendance()">Submit Attendance</button>
-    </form>
+    </form> -->
   </div>
   

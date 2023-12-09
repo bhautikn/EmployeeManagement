@@ -1,18 +1,16 @@
-div {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 8px;
-  }
-  
-  input,
-  select {
+
+.border-emp-name{
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+}
+.container{
+  padding: 10px;
+  width: 100% !important;
+}
+  input{
     width: 100%;
     padding: 8px;
     margin-bottom: 16px;

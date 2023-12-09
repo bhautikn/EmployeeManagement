@@ -22,6 +22,7 @@ class employee{
   styleUrl: './employee.component.css'
 })
 export class EmployeeComponent {
+  display = false;
   employees:employee[] = [
                 {id:'1', firstName:'ronit', middleName:'rajeshbhai', lastName:'kukadiya',deptartment:'IT'},
                {id:'2', firstName:'bhautik', middleName:'rajeshbhai', lastName:'navdariya',deptartment:'IT'},
@@ -60,11 +61,24 @@ export class EmployeeComponent {
 
   searchEmployees(){
     this.filteredemp = this.employees.filter((fac:any)=>{
-      return fac.name.indexOf(this.searchText) != -1;
-    }) 
+      console.log(fac);
+      // return true;
+      return fac.firstName.indexOf(this.searchText) != -1;
+    })
 
     console.log(this.filteredemp)
-  }  
+  }
+  displaySearch(){
+    let search:any = document.getElementById('search-box');
+    search.style.display = 'block';
+    search.focus();
+    this.display = true;
+  }
+  hideSearch(){
+    let search:any = document.getElementById('search-box');
+    search.style.display = 'none';
+    this.display = false;
+  }
 }
 
 
