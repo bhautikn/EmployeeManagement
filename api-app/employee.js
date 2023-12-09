@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const scema = mongoose.Schema({
     _id:mongoose.Types.ObjectId,
+    leave:Number,
     username:String,
     firstname:String,
     middlename:String,
