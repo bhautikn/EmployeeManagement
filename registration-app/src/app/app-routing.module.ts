@@ -6,6 +6,7 @@ import { AdminComponent } from './admin/admin.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { LeaveFormComponent } from './leave-form/leave-form.component';
 import { AttendenceComponent } from './attendence/attendence.component';
+import { EmpInfoComponent } from './emp-info/emp-info.component';
 
 const routes: Routes = [
   {path:'login', component:LoginComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:'admin/employees', component:EmployeeComponent},
   {path:'employees/leave-form', component:LeaveFormComponent},
   {path:'admin/attendance', component:AttendenceComponent},
+  {path:'admin/employees/:id', component:EmpInfoComponent},
 
 ];
 
