@@ -2,6 +2,7 @@
 
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-leave-form',
@@ -9,7 +10,9 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./leave-form.component.css']
 })
 export class LeaveFormComponent {
-  leaveForm: FormGroup = new FormGroup({
+
+  leaveForm:any = new FormGroup({
+    typeOfLeave:new FormControl('', Validators.required),
     reason: new FormControl('', Validators.required),
     days: new FormControl('', Validators.required),
     startDate: new FormControl('', Validators.required),
@@ -26,14 +29,8 @@ export class LeaveFormComponent {
   //   });
   // }
 
-  calculateLeave() {
-    const daysTaken = this.leaveForm.value.days;
-
-    if (daysTaken <= 5) {
-      this.result = 'Paid Leave';
-    } else {
-      this.result = 'Unpaid Leave';
-    }
+  submitForm() {
+    console.log(this.leaveForm.value)
   }
   cancelleave() {
     // Handle form submission logic
