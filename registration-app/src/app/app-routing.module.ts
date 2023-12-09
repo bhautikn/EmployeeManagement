@@ -9,7 +9,6 @@ import { AttendenceComponent } from './attendence/attendence.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { InboxComponent } from './inbox/inbox.component';
 import { AttendenceSheetComponent } from './attendence-sheet/attendence-sheet.component';
-import { AppComponent } from './app.component';
  
 
 const routes: Routes = [
