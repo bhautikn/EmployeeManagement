@@ -1,10 +1,12 @@
+// leave-form.component.ts
+
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-leave-form',
   templateUrl: './leave-form.component.html',
-  styleUrl: './leave-form.component.css'
+  styleUrls: ['./leave-form.component.css']
 })
 export class LeaveFormComponent {
   leaveForm: FormGroup = new FormGroup({
@@ -33,4 +35,8 @@ export class LeaveFormComponent {
       this.result = 'Unpaid Leave';
     }
   }
+  cancelleave() {
+    // Handle form submission logic
+    console.log();
+  }  
 }
