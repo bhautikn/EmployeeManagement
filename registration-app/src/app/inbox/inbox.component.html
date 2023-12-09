@@ -14,16 +14,16 @@
       <!-- Table headers -->
       <thead>
         <tr>
-          <th>Subject</th>
           <th>Date</th>
+          <th>Subject</th>
           <!-- Add more columns as needed -->
         </tr>
       </thead>
       <!-- Table content for 'Read' button -->
       <tbody>
         <tr *ngFor="let message of readMessages">
-          <td>{{ message.subject }}</td>
           <td>{{ message.date }}</td>
+          <td>{{ message.subject }}</td>
           <!-- Add more columns as needed -->
         </tr>
       </tbody>
@@ -33,16 +33,16 @@
       <!-- Table headers -->
       <thead>
         <tr>
-          <th>Subject</th>
           <th>Date</th>
+          <th>Subject</th>
           <!-- Add more columns as needed -->
         </tr>
       </thead>
       <!-- Table content for 'Unread' button -->
       <tbody>
         <tr *ngFor="let message of unreadMessages">
-          <td>{{ message.subject }}</td>
           <td>{{ message.date }}</td>
+          <td>{{ message.subject }}</td>
           <!-- Add more columns as needed -->
         </tr>
       </tbody>

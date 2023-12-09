@@ -12,6 +12,7 @@ import { EmployeeComponent } from './employee/employee.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { LeaveFormComponent } from './leave-form/leave-form.component';
 import { AttendenceComponent } from './attendence/attendence.component';
+import { EmployeePanelComponent } from './employee-panel/employee-panel.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AttendenceComponent } from './attendence/attendence.component';
     AddEmployeeComponent,
     LeaveFormComponent,
     AttendenceComponent,
+    EmployeePanelComponent,
   ],
   imports: [
     BrowserModule,

@@ -17,8 +17,8 @@ const routes: Routes = [
   {path:'employees/leave-form', component:LeaveFormComponent},
   {path:'admin/attendance', component:AttendenceComponent},
   {path:'admin/add-emp', component:AddEmployeeComponent},
-  // {path:'admin/employees/:id', component:EmpInfoComponent},
   {path:'admin/inbox', component:InboxComponent},
+  {path:'employeePanel', component:InboxComponent},
 
 ];
 
