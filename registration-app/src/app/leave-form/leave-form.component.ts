@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-leave-form',
@@ -7,17 +7,22 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrl: './leave-form.component.css'
 })
 export class LeaveFormComponent {
-  leaveForm: FormGroup;
+  leaveForm: FormGroup = new FormGroup({
+    reason: new FormControl('', Validators.required),
+    days: new FormControl('', Validators.required),
+    startDate: new FormControl('', Validators.required),
+    endDate: new FormControl('', Validators.required),
+  })
   result: string = '';
 
-  constructor(private fb: FormBuilder) {
-    this.leaveForm = this.fb.group({
-      reason: ['', Validators.required],
-      days: [1, [Validators.required, Validators.min(1)]],
-      startDate: ['', Validators.required],
-      endDate: ['', Validators.required],
-    });
-  }
+  // constructor(private fb: FormBuilder) {
+  //   this.leaveForm = this.fb.group({
+  //     reason: ['', Validators.required],
+  //     days: [1, [Validators.required, Validators.min(1)]],
+  //     startDate: ['', Validators.required],
+  //     endDate: ['', Validators.required],
+  //   });
+  // }
 
   calculateLeave() {
     const daysTaken = this.leaveForm.value.days;
