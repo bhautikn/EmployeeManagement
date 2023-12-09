@@ -1,0 +1,18 @@
+<div>
+    <h2>Employee Attendance Sheet</h2>
+  
+    <form>
+      <div *ngFor="let employee of employees">
+        <label>
+          <input type="checkbox" [(ngModel)]="employee.present">
+          {{ employee.name }}
+        </label>
+      </div>
+  
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" [(ngModel)]="attendanceDate" required>
+  
+      <button type="button" (click)="submitAttendance()">Submit Attendance</button>
+    </form>
+  </div>
+  

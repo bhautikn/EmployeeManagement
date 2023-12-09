@@ -5,13 +5,15 @@ import { ForgotPassComponent } from './forgot-pass/forgot-pass.component';
 import { AdminComponent } from './admin/admin.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { LeaveFormComponent } from './leave-form/leave-form.component';
+import { AttendenceComponent } from './attendence/attendence.component';
 
 const routes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'forgot-pass', component:ForgotPassComponent},
   {path:'admin', component:AdminComponent},
   {path:'admin/employees', component:EmployeeComponent},
-  {path:'employees/leave-form', component:LeaveFormComponent}
+  {path:'employees/leave-form', component:LeaveFormComponent},
+  {path:'admin/attendance', component:AttendenceComponent},
 
 ];
 
