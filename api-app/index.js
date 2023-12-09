@@ -13,6 +13,9 @@ mongoose.connect(uri).then(()=>{
 app.use(cors())
 app.use(bodyparser.urlencoded({ extended: true }))
 app.use(bodyparser.json());
+app.use('/admin', (req,res)=>{
+    console.log(req.headers.cookie);
+})
 // const data = new User({
 //     username:'bhautik',
 //     password:'bhautik',
