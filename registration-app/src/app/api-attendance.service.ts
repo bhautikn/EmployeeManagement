@@ -9,11 +9,11 @@ export class ApiAttendanceService {
   constructor(private _http:HttpClient) { }
   
   headers = new HttpHeaders({'Coockie':document.cookie});
+  
   getAll(){
     return this._http.get(this.apiUrl, { headers: this.headers });
   }
   sendAttandance(data:any){
-    console.log('called')
     return this._http.post(this.apiUrl, data, { headers: this.headers }).subscribe();
   }
 }

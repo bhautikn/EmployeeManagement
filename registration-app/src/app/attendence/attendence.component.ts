@@ -30,10 +30,8 @@ export class AttendenceComponent {
       this.employees = emp.map((data:any)=>{
         data.present = false;
         data.date = date;
-        console.log(data)
         return data;
       });
-      console.log(this.employees)
     });
   }
 

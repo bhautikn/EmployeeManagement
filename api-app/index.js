@@ -36,7 +36,6 @@ app.get('/admin/attandance',async (req,res)=>{
 })
 app.post('/admin/attandance', async (req, res)=>{
     const data = await Attandace.insertMany(req.body);
-    console.log(req.body)
     res.json({status:'ok'})
 })
 
@@ -61,7 +60,6 @@ app.post('/UserLogin', async (req, res)=>{
     else{
         res.json({login:false});
     }
-    console.log(data);
 
 })
 
