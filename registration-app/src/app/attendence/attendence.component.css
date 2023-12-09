@@ -24,4 +24,27 @@
     border-radius: 4px;
     cursor: pointer;
   }
-  
+  .search-btn{
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 5px;
+    float: right;
+    cursor: pointer;
+    transition-duration: 200ms;
+}
+.search-btn:hover{
+    background-color: lightgrey;
+}
+#search-box{
+    display: none;
+    position: relative;
+    animation: search-box-ani 200ms;
+}
+@keyframes search-box-ani {
+    from{
+        right: -50px;
+    }
+    to{
+        right:0;
+    }
+}
