@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AttendenceComponent {
   employees= [
+    {name:"aditya",present:false},
+    {name:"aditya",present:false},
+    {name:"aditya",present:false},
+    {name:"aditya",present:false},
     {name:"aditya",present:false}
   ];
   attendanceDate: string = '';
