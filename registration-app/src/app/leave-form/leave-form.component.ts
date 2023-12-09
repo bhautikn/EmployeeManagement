@@ -11,7 +11,7 @@ import { from } from 'rxjs';
 })
 export class LeaveFormComponent {
 
-  leaveForm:any = new FormGroup({
+  leaveForm = new FormGroup({
     typeOfLeave:new FormControl('', Validators.required),
     reason: new FormControl('', Validators.required),
     days: new FormControl('', Validators.required),

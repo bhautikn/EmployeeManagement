@@ -1,24 +1,5 @@
 <h1>Leave Form</h1>
-<form [fromGroup]="leaveForm" (ngSubmit)="submitForm()">
-<!-- <div class="row">
-  <div class="col">
-    <label for="firstName">First Name:</label>
-    <input type="text" id="firstName" name="firstName" [(ngModel)]="leaveApplication.firstName" required>
-  </div>
-
-  <div class="col">
-    <label for="department">Department:</label>
-    <input type="text" id="department" name="department" [(ngModel)]="leaveApplication.department" required>
-  </div>
-
-  <div class="col">
-    <label for="designation">Designation:</label>
-    <input type="text" id="designation" name="designation" [(ngModel)]="leaveApplication.designation" required>
-  </div>
-</div> -->
-
-<!-- <hr width="100%" size="7" color="black"  noshade>  -->
-
+<form [formGroup]="leaveForm" (ngSubmit)="submitForm()">
 <div>
   <label for="reasonForLeave">Reason for Leave:</label>
   <textarea id="reasonForLeave" formControlName="reason"></textarea>
@@ -46,7 +27,7 @@
 
 <div class="col">
   <label for="numberOfDays" >Number of Days:</label>
-  <input type="number" id="numberOfDays" fromContrlName="days" required>
+  <input type="number" id="numberOfDays" formControlName="days" required>
 </div>
 
 <div class="col">
@@ -56,7 +37,7 @@
 
 <div class="col">
   <label for="endDate">End Date:</label>
-  <input type="date" id="endDate" fromControlName="endDate">
+  <input type="date" id="endDate" formControlName="endDate">
 </div>
 </div>
 
