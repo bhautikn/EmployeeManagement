@@ -14,6 +14,8 @@ import { LeaveFormComponent } from './leave-form/leave-form.component';
 import { AttendenceComponent } from './attendence/attendence.component';
 import { AttendenceSheetComponent } from './attendence-sheet/attendence-sheet.component';
 import { EmployeePanelComponent } from './employee-panel/employee-panel.component';
+import { EpmNevComponent } from './epm-nev/epm-nev.component';
+import { AdminNevComponent } from './admin-nev/admin-nev.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { EmployeePanelComponent } from './employee-panel/employee-panel.componen
     AddEmployeeComponent,
     LeaveFormComponent,
     AttendenceComponent,
+    EpmNevComponent,
+    AdminNevComponent,
   ],
   imports: [
     BrowserModule,
