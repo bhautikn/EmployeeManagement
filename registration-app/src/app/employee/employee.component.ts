@@ -23,10 +23,10 @@ class employee{
 })
 export class EmployeeComponent {
   employees:employee[] = [
-                {id:'1', firstName:'ronit', middleName:'rajeshbhai', lastName:'kukadiya',deptartment:'IT'},
-               {id:'2', firstName:'bhautik', middleName:'rajeshbhai', lastName:'navdariya',deptartment:'IT'},
-               {id:'3', firstName:'aditya', middleName:'rajeshbhai', lastName:'vadodariya',deptartment:'IT'},
-               {id:'4', firstName:'Ayaz', middleName:'rajeshbhai', lastName:'vakaliya',deptartment:'IT'}
+                {id:'1', firstName:'Ronit', middleName:'Rajesh Bhai', lastName:'kukadiya',deptartment:'IT'},
+               {id:'2', firstName:'Bhautik', middleName:'Mahesh Bahi', lastName:'Navdariya',deptartment:'IT'},
+               {id:'3', firstName:'Aditya', middleName:'Manish Bhai', lastName:'Vadodariya',deptartment:'IT'},
+               {id:'4', firstName:'Ayaz', middleName:'Nizamidin Bhai', lastName:'Vakaliya',deptartment:'IT'}
               ];
   tempemployees = "";
   filteredemp :any= [];
