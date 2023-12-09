@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrl: './add-employee.component.css'
 })
 export class AddEmployeeComponent {
+  employee: any = {}; // Initialize with empty object
 
+  onImageUpload(event: any) {
+    // Handle image upload logic
+}
+submitForm() {
+  // Handle form submission logic
+  console.log(this.employee);
+}
 }
