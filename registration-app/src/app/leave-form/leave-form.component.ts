@@ -1,6 +1,8 @@
 // leave-form.component.ts
 
 import { Component } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-leave-form',
@@ -8,12 +10,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./leave-form.component.css']
 })
 export class LeaveFormComponent {
-  leaveApplication: any = {}; // Initialize with empty object
 
-  // You can add additional logic here if needed
+  leaveForm = new FormGroup({
+    typeOfLeave:new FormControl('', Validators.required),
+    reason: new FormControl('', Validators.required),
+    days: new FormControl('', Validators.required),
+    startDate: new FormControl('', Validators.required),
+    endDate: new FormControl('', Validators.required),
+  })
+  result: string = '';
+
+  // constructor(private fb: FormBuilder) {
+  //   this.leaveForm = this.fb.group({
+  //     reason: ['', Validators.required],
+  //     days: [1, [Validators.required, Validators.min(1)]],
+  //     startDate: ['', Validators.required],
+  //     endDate: ['', Validators.required],
+  //   });
+  // }
+
   submitForm() {
-    // Handle form submission logic
-    console.log();
+    console.log(this.leaveForm.value)
   }
   cancelleave() {
     // Handle form submission logic

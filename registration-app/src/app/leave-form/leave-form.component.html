@@ -1,33 +1,13 @@
-<!-- leave-form.component.html -->
 <h1>Leave Form</h1>
-<form>
-<!-- <div class="row">
-  <div class="col">
-    <label for="firstName">First Name:</label>
-    <input type="text" id="firstName" name="firstName" [(ngModel)]="leaveApplication.firstName" required>
-  </div>
-
-  <div class="col">
-    <label for="department">Department:</label>
-    <input type="text" id="department" name="department" [(ngModel)]="leaveApplication.department" required>
-  </div>
-
-  <div class="col">
-    <label for="designation">Designation:</label>
-    <input type="text" id="designation" name="designation" [(ngModel)]="leaveApplication.designation" required>
-  </div>
-</div> -->
-
-<!-- <hr width="100%" size="7" color="black"  noshade>  -->
-
+<form [formGroup]="leaveForm" (ngSubmit)="submitForm()">
 <div>
   <label for="reasonForLeave">Reason for Leave:</label>
-  <textarea id="reasonForLeave" name="reasonForLeave" [(ngModel)]="leaveApplication.reasonForLeave" required></textarea>
+  <textarea id="reasonForLeave" formControlName="reason"></textarea>
 </div>
 
 <div>
   <label for="typeOfLeave">Type of Leave:</label>
-  <select id="typeOfLeave" name="typeOfLeave" [(ngModel)]="leaveApplication.typeOfLeave" required>
+  <select id="typeOfLeave" formControlName="typeOfLeave" required>
     <option value="Annual Leave">Annual Leave</option>
     <option value="Sick Leave">Sick Leave</option>
     <option value="Maternity Leave">Maternity Leave</option>
@@ -46,24 +26,24 @@
 <div class="row">
 
 <div class="col">
-  <label for="numberOfDays">Number of Days:</label>
-  <input type="number" id="numberOfDays" name="numberOfDays" [(ngModel)]="leaveApplication.numberOfDays" required>
+  <label for="numberOfDays" >Number of Days:</label>
+  <input type="number" id="numberOfDays" formControlName="days" required>
 </div>
 
 <div class="col">
   <label for="startDate">Start Date:</label>
-  <input type="date" id="startDate" name="startDate" [(ngModel)]="leaveApplication.startDate" required>
+  <input type="date" id="startDate" formControlName="startDate">
 </div>
 
 <div class="col">
   <label for="endDate">End Date:</label>
-  <input type="date" id="endDate" name="endDate" [(ngModel)]="leaveApplication.endDate" required>
+  <input type="date" id="endDate" formControlName="endDate">
 </div>
 </div>
 
 <div>
-  <button type="button" (click)="submitForm()">Submit</button>
+  <button type="button">Submit</button>
 &nbsp;
-  <button type="button" class="btn" (click)="cancelleave()">Cancle</button>
+  <button type="reset" class="btn" (click)="cancelleave()">Cancle</button>
 </div>  
 </form>

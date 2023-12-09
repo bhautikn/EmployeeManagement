@@ -12,6 +12,7 @@ import { EmployeeComponent } from './employee/employee.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { LeaveFormComponent } from './leave-form/leave-form.component';
 import { AttendenceComponent } from './attendence/attendence.component';
+import { AttendenceSheetComponent } from './attendence-sheet/attendence-sheet.component';
 import { EmployeePanelComponent } from './employee-panel/employee-panel.component';
 
 @NgModule({
@@ -24,14 +25,13 @@ import { EmployeePanelComponent } from './employee-panel/employee-panel.componen
     AddEmployeeComponent,
     LeaveFormComponent,
     AttendenceComponent,
-    EmployeePanelComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
