@@ -8,6 +8,8 @@ import { LeaveFormComponent } from './leave-form/leave-form.component';
 import { AttendenceComponent } from './attendence/attendence.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { InboxComponent } from './inbox/inbox.component';
+import { AttendenceSheetComponent } from './attendence-sheet/attendence-sheet.component';
+ 
 
 const routes: Routes = [
   {path:'login', component:LoginComponent},
@@ -19,6 +21,7 @@ const routes: Routes = [
   {path:'admin/add-emp', component:AddEmployeeComponent},
   // {path:'admin/employees/:id', component:EmpInfoComponent},
   {path:'admin/inbox', component:InboxComponent},
+  {path:'admin/employees/attendnce', component:AttendenceSheetComponent},
 
 ];
 
